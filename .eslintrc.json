@@ -4,9 +4,9 @@
     "es2021": true
   },
   "extends": [
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
     "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended",
     "airbnb"
   ],
   "parser": "@typescript-eslint/parser",
@@ -30,18 +30,21 @@
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [
-          ".tsx"
-        ]
+      "extensions": [
+        ".tsx"
+      ]
       }
     ],
-    "no-undef": "off",
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": [
       "error"
     ],
-    "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",
+    "import/prefer-default-export": "off",
+    "react/jsx-props-no-spreading": "off",
+    "no-restricted-properties": "off",
+    "no-undef": "off",
+    "no-new":"off",
     "import/extensions": [
       "error",
       "ignorePackages",
