@@ -3,7 +3,7 @@ import { Nav } from '../components/Nav';
 
 export default function Home(): JSX.Element {
   return (
-    <Flex direction="column" h="100vh" w="100%">
+    <Flex direction="column" h="100vh - 24" w="100%">
       <Box
         backgroundImage="url('bannertop.png')"
         backgroundRepeat="no-repeat"
