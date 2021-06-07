@@ -9,7 +9,7 @@ export function Information(): JSX.Element {
     <Flex align="center">
       <TextInformation />
 
-      <Flex flex="1" align="center" ml="16">
+      <Flex flex="1" align="center" justify="flex-end" marginLeft="auto">
         <HStack spacing="10">
           <CountCountry />
 
