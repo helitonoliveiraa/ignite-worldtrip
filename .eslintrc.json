@@ -47,6 +47,7 @@
     "jsx-a11y/anchor-is-valid": "off",
     "object-curly-newline": "off",
     "no-restricted-properties": "off",
+    "arrow-parens": "off",
     "no-undef": "off",
     "no-new":"off",
     "import/extensions": [
