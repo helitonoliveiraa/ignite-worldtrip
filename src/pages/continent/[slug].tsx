@@ -1,7 +1,7 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
-import { CityCard } from '../components/Continents/CityCard';
-import { CityBanner } from '../components/Continents/ContinentBanner';
-import { Information } from '../components/Continents/ContinentInformation';
+import { CityCard } from '../../components/Continents/CityCard';
+import { CityBanner } from '../../components/Continents/ContinentBanner';
+import { Information } from '../../components/Continents/ContinentInformation';
 
 export default function Trip(): JSX.Element {
   return (
