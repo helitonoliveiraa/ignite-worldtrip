@@ -1,24 +1,32 @@
+import Head from 'next/head';
 import { Box, Flex, Text } from '@chakra-ui/react';
+
 import { CityCard } from '../../components/Continents/CityCard';
 import { CityBanner } from '../../components/Continents/ContinentBanner';
 import { Information } from '../../components/Continents/ContinentInformation';
 
 export default function Trip(): JSX.Element {
   return (
-    <Flex direction="column" h="100vh - 24" w="100%">
-      <CityBanner />
+    <>
+      <Head>
+        <title>Continent | Worldtrip</title>
+      </Head>
 
-      <Box mt="20" w="100%" maxWidth={1200} h="100%" mx="auto" px="5">
-        <Information />
+      <Flex direction="column" h="100vh - 24" w="100%">
+        <CityBanner />
 
-        <Box mt="20" mb="20">
-          <Text fontSize="4xl" fontWeight={500}>
-            Cidade s +100
-          </Text>
+        <Box mt="20" w="100%" maxWidth={1200} h="100%" mx="auto" px="5">
+          <Information />
 
-          <CityCard />
+          <Box mt="20" mb="20">
+            <Text fontSize="4xl" fontWeight={500}>
+              Cidade s +100
+            </Text>
+
+            <CityCard />
+          </Box>
         </Box>
-      </Box>
-    </Flex>
+      </Flex>
+    </>
   );
 }

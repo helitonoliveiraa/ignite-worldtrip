@@ -9,9 +9,15 @@ import SwiperCore, {
   Autoplay,
 } from 'swiper/core';
 
+import { Continent } from '../../pages/index';
+
 SwiperCore.use([Pagination, Navigation, Mousewheel, Keyboard, Autoplay]);
 
-export function Slide(): JSX.Element {
+type SlideProps = {
+  continents: Continent[];
+};
+
+export function Slide({ continents }: SlideProps): JSX.Element {
   return (
     <Box w="100%" h="100%" maxWidth={1240} mx="auto" mt="14">
       <Swiper
@@ -28,30 +34,32 @@ export function Slide(): JSX.Element {
         }}
         navigation
       >
-        <SwiperSlide>
-          <Flex
-            textAlign="center"
-            bgImage="slide.png"
-            backgroundRepeat="no-repeat"
-            backgroundSize="cover"
-            w="100%"
-            h={450}
-            align="center"
-            justify="center"
-            direction="column"
-          >
-            <Link href="/continent/europe">
-              <a>
-                <Text fontSize="5xl" fontWeight="bold" color="gray.50">
-                  Europa
-                </Text>
-                <Text fontSize="2xl" fontWeight="bold" color="gray.300">
-                  O continente mais antigo.
-                </Text>
-              </a>
-            </Link>
-          </Flex>
-        </SwiperSlide>
+        {continents.map(continent => (
+          <SwiperSlide key={continent.slug}>
+            <Flex
+              textAlign="center"
+              bgImage={continent.slideBannerURL}
+              backgroundRepeat="no-repeat"
+              backgroundSize="cover"
+              w="100%"
+              h={450}
+              align="center"
+              justify="center"
+              direction="column"
+            >
+              <Link href={`/continent/${continent.slug}`}>
+                <a>
+                  <Text fontSize="5xl" fontWeight="bold" color="gray.50">
+                    {continent.titleSlide}
+                  </Text>
+                  <Text fontSize="2xl" fontWeight="bold" color="gray.300">
+                    {continent.aboutText}
+                  </Text>
+                </a>
+              </Link>
+            </Flex>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </Box>
   );
