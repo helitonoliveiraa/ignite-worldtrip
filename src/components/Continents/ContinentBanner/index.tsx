@@ -1,9 +1,13 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 
-export function CityBanner(): JSX.Element {
+type CityBannerProps = {
+  bannerURL: string;
+};
+
+export function CityBanner({ bannerURL }: CityBannerProps): JSX.Element {
   return (
     <Box
-      backgroundImage="url('europe_banner.png')"
+      backgroundImage={`url(${bannerURL})`}
       backgroundRepeat="no-repeat"
       backgroundSize="cover"
       width="100%"

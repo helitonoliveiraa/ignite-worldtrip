@@ -1,6 +1,12 @@
 import { Box, Text } from '@chakra-ui/react';
 
-export function CountCountry(): JSX.Element {
+type CountCountryProps = {
+  quantityCountry: string;
+};
+
+export function CountCountry({
+  quantityCountry,
+}: CountCountryProps): JSX.Element {
   return (
     <Box>
       <Text
@@ -9,7 +15,7 @@ export function CountCountry(): JSX.Element {
         fontWeight={600}
         color="yellow.500"
       >
-        50
+        {quantityCountry}
       </Text>
       <Text fontSize="2xl" fontWeight={600}>
         países

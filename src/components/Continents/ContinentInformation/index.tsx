@@ -1,21 +1,30 @@
 import { Flex, HStack } from '@chakra-ui/react';
+
 import { CountCities } from './CountCities';
 import { CountCountry } from './CountCountry';
 import { CountLanguages } from './CountLanguages';
 import { TextInformation } from './TextInformation';
 
-export function Information(): JSX.Element {
+type InformationProps = {
+  quantity: {
+    quantityCountry: string;
+    quantityLanquages: string;
+    quantityCities: string;
+  };
+};
+
+export function Information({ quantity }: InformationProps): JSX.Element {
   return (
     <Flex align="center">
       <TextInformation />
 
       <Flex flex="1" align="center" justify="flex-end" marginLeft="auto">
         <HStack spacing="10">
-          <CountCountry />
+          <CountCountry quantityCountry={quantity.quantityCountry} />
 
-          <CountLanguages />
+          <CountLanguages quantityLanquages={quantity.quantityLanquages} />
 
-          <CountCities />
+          <CountCities quantityCities={quantity.quantityCities} />
         </HStack>
       </Flex>
     </Flex>

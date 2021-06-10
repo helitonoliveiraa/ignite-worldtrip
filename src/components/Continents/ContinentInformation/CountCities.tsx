@@ -1,6 +1,10 @@
 import { Box, Text } from '@chakra-ui/react';
 
-export function CountCities(): JSX.Element {
+type CountCitiesProps = {
+  quantityCities: string;
+};
+
+export function CountCities({ quantityCities }: CountCitiesProps): JSX.Element {
   return (
     <Box>
       <Text
@@ -9,7 +13,7 @@ export function CountCities(): JSX.Element {
         fontWeight={600}
         color="yellow.500"
       >
-        27
+        {quantityCities}
       </Text>
       <Text fontSize="2xl" fontWeight={600}>
         cidades +100

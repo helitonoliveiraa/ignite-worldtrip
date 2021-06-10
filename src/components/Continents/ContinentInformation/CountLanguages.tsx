@@ -1,6 +1,12 @@
 import { Box, Text } from '@chakra-ui/react';
 
-export function CountLanguages(): JSX.Element {
+type CountLanguagesProps = {
+  quantityLanquages: string;
+};
+
+export function CountLanguages({
+  quantityLanquages,
+}: CountLanguagesProps): JSX.Element {
   return (
     <Box>
       <Text
@@ -9,7 +15,7 @@ export function CountLanguages(): JSX.Element {
         fontWeight={600}
         color="yellow.500"
       >
-        60
+        {quantityLanquages}
       </Text>
       <Text fontSize="2xl" fontWeight={600}>
         línguas
