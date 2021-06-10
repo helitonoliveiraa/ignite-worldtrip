@@ -6,6 +6,7 @@ import { CountLanguages } from './CountLanguages';
 import { TextInformation } from './TextInformation';
 
 type InformationProps = {
+  about: string;
   quantity: {
     quantityCountry: string;
     quantityLanquages: string;
@@ -13,10 +14,13 @@ type InformationProps = {
   };
 };
 
-export function Information({ quantity }: InformationProps): JSX.Element {
+export function Information({
+  quantity,
+  about,
+}: InformationProps): JSX.Element {
   return (
     <Flex align="center">
-      <TextInformation />
+      <TextInformation>{about}</TextInformation>
 
       <Flex flex="1" align="center" justify="flex-end" marginLeft="auto">
         <HStack spacing="10">
