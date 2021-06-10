@@ -2,44 +2,30 @@ import { Flex, SimpleGrid } from '@chakra-ui/react';
 
 import { Card } from './Card';
 
-export function CityCard(): JSX.Element {
+type ICard = {
+  image: string;
+  countryName: string;
+  cityName: string;
+  flag: string;
+};
+
+type CityCardProps = {
+  cards: ICard[];
+};
+
+export function CityCard({ cards }: CityCardProps): JSX.Element {
   return (
     <Flex mt="10" w="100%">
       <SimpleGrid flex="1" minChildWidth="256px" gap="10">
-        <Card
-          imgCountryURL="/images/countries/londres.png"
-          country="Reino Unido"
-          city="Londres"
-          flagURL="/images/flags/reino_unido.png"
-        />
-
-        <Card
-          imgCountryURL="/images/countries/paris.png"
-          country="Paris"
-          city="França"
-          flagURL="/images/flags/franca.png"
-        />
-
-        <Card
-          imgCountryURL="/images/countries/roma.png"
-          country="Roma"
-          city="Itália"
-          flagURL="/images/flags/italia.png"
-        />
-
-        <Card
-          imgCountryURL="/images/countries/praga.png"
-          country="Praga"
-          city="França"
-          flagURL="/images/flags/republica_tcheca.png"
-        />
-
-        <Card
-          imgCountryURL="/images/countries/amsterda.png"
-          country="Amsterdã"
-          city="França"
-          flagURL="/images/flags/holanda.png"
-        />
+        {cards.map(card => (
+          <Card
+            key={card.image}
+            imgCountryURL={card.image}
+            country={card.countryName}
+            city={card.cityName}
+            flagURL={card.flag}
+          />
+        ))}
       </SimpleGrid>
     </Flex>
   );
