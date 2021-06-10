@@ -26,7 +26,7 @@ export function Slide({ continents }: SlideProps): JSX.Element {
         spaceBetween={30}
         centeredSlides
         autoplay={{
-          delay: 2500,
+          delay: 4000,
           disableOnInteraction: false,
         }}
         pagination={{
