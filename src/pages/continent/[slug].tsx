@@ -38,10 +38,13 @@ export default function Continent({ continent }: ContinentProps): JSX.Element {
       </Head>
 
       <Flex direction="column" h="100vh - 24" w="100%">
-        <CityBanner bannerURL={continent.bannerURL} />
+        <CityBanner bannerURL={continent.bannerURL} title={continent.title} />
 
         <Box mt="20" w="100%" maxWidth={1200} h="100%" mx="auto" px="5">
-          <Information quantity={continent.quantities} />
+          <Information
+            quantity={continent.quantities}
+            about={continent.about}
+          />
 
           <Box mt="20" mb="20">
             <Text fontSize="4xl" fontWeight={500}>
@@ -68,11 +71,20 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const response = await prismic.getByUID('continent', String(slug), {});
 
+  if (!response) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+
   const continent = {
     slug,
     title: RichText.asText(response.data.continent),
     bannerURL: response.data.banner.url,
-    about: response.data.about,
+    about: RichText.asText(response.data.about),
     quantities: {
       quantityCountry: response.data.countries,
       quantityLanquages: response.data.languages,
