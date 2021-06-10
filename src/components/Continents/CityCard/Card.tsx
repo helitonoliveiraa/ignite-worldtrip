@@ -17,7 +17,7 @@ export function Card({
     <Box
       maxWidth="64"
       border="1px solid"
-      borderColor="yellow.300"
+      borderColor="red.700"
       borderRadius="4px"
     >
       <Image src={imgCountryURL} alt={city} borderTopRadius="4px" />

@@ -9,12 +9,7 @@ export function CountLanguages({
 }: CountLanguagesProps): JSX.Element {
   return (
     <Box>
-      <Text
-        textAlign="center"
-        fontSize="5xl"
-        fontWeight={600}
-        color="yellow.500"
-      >
+      <Text textAlign="center" fontSize="5xl" fontWeight={600} color="red.700">
         {quantityLanquages}
       </Text>
       <Text fontSize="2xl" fontWeight={600}>
