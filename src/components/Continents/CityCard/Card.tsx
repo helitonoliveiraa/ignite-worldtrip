@@ -22,7 +22,7 @@ export function Card({
     >
       <Image src={imgCountryURL} alt={city} borderTopRadius="4px" />
 
-      <Flex align="center" justify="space-between" p="6">
+      <Flex align="center" justify="space-between" p="6" mt="auto">
         <Box>
           <VStack spacing="3" align="start">
             <Text fontSize="xl" fontWeight={500} lineHeight="6">

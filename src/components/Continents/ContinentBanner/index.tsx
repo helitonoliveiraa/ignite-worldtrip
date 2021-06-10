@@ -2,9 +2,10 @@ import { Box, Flex, Text } from '@chakra-ui/react';
 
 type CityBannerProps = {
   bannerURL: string;
+  title: string;
 };
 
-export function CityBanner({ bannerURL }: CityBannerProps): JSX.Element {
+export function CityBanner({ bannerURL, title }: CityBannerProps): JSX.Element {
   return (
     <Box
       backgroundImage={`url(${bannerURL})`}
@@ -15,7 +16,7 @@ export function CityBanner({ bannerURL }: CityBannerProps): JSX.Element {
     >
       <Flex w="100%" maxWidth={1200} h="100%" mx="auto" px="5">
         <Text fontSize="5xl" fontWeight={600} color="gray.50" mt="auto" pb="16">
-          Europa
+          {title}
         </Text>
       </Flex>
     </Box>
