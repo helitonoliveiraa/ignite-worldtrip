@@ -1,34 +1,47 @@
-import { Flex, Image } from '@chakra-ui/react';
+import { Image, SimpleGrid, useBreakpointValue } from '@chakra-ui/react';
 import { NavLink } from './NavLink';
 import { NavLinkText } from './NavLinkText';
 
-export function Nav() {
+export function Nav(): JSX.Element {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   return (
-    <Flex as="nav" justifyContent="space-between" w="100%">
+    <SimpleGrid
+      as="nav"
+      w="100%"
+      minChildWidth="136px"
+      minHeight="8px"
+      // columns={[2, null, 3]}
+      gap={['0', '2']}
+      textAlign="left"
+    >
       <NavLink>
-        <Image src="/assets/cocktail.svg" w="21" />
+        {isWideVersion && <Image src="/assets/cocktail.svg" />}
         <NavLinkText>vida noturna</NavLinkText>
       </NavLink>
 
       <NavLink>
-        <Image src="/assets/surf.svg" />
+        {isWideVersion && <Image src="/assets/surf.svg" />}
         <NavLinkText>praia</NavLinkText>
       </NavLink>
 
       <NavLink>
-        <Image src="/assets/building.svg" />
+        {isWideVersion && <Image src="/assets/building.svg" />}
         <NavLinkText>moderno</NavLinkText>
       </NavLink>
 
       <NavLink>
-        <Image src="/assets/museum.svg" />
+        {isWideVersion && <Image src="/assets/museum.svg" />}
         <NavLinkText>clássico</NavLinkText>
       </NavLink>
 
       <NavLink>
-        <Image src="/assets/earth.svg" />
+        {isWideVersion && <Image src="/assets/earth.svg" />}
         <NavLinkText>e mais...</NavLinkText>
       </NavLink>
-    </Flex>
+    </SimpleGrid>
   );
 }

@@ -15,8 +15,13 @@ type CityCardProps = {
 
 export function CityCard({ cards }: CityCardProps): JSX.Element {
   return (
-    <Flex mt="10" w="100%">
-      <SimpleGrid flex="1" minChildWidth="256px" gap="10">
+    <Flex mt={['5', '10']} w="100%">
+      <SimpleGrid
+        flex="1"
+        minChildWidth="256px"
+        gap={['5', '10']}
+        justifyContent="center"
+      >
         {cards.map(card => (
           <Card
             key={card.image}

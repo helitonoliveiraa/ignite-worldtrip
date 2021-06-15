@@ -5,6 +5,8 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta name="theme-color" content="#C10C2E" />
+
           <link rel="shortcut icon" href="favicon.png" type="image/png" />
 
           <link rel="preconnect" href="https://fonts.gstatic.com" />

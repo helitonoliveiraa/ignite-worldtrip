@@ -1,4 +1,4 @@
-import { Flex, HStack } from '@chakra-ui/react';
+import { Flex, HStack, useBreakpointValue } from '@chakra-ui/react';
 
 import { CountCities } from './CountCities';
 import { CountCountry } from './CountCountry';
@@ -18,12 +18,24 @@ export function Information({
   quantity,
   about,
 }: InformationProps): JSX.Element {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   return (
-    <Flex align="center">
+    <Flex align="center" flexDirection={isWideVersion ? 'row' : 'column'}>
       <TextInformation>{about}</TextInformation>
 
-      <Flex flex="1" align="center" justify="flex-end" marginLeft="auto">
-        <HStack spacing="10">
+      <Flex
+        flex="1"
+        w="100%"
+        align="center"
+        justify={['space-between', 'flex-end']}
+        marginLeft={['0', 'auto']}
+        mt={isWideVersion ? '0' : '4'}
+      >
+        <HStack spacing={['5', '10']}>
           <CountCountry quantityCountry={quantity.quantityCountry} />
 
           <CountLanguages quantityLanquages={quantity.quantityLanquages} />

@@ -8,14 +8,14 @@ export function CountCities({ quantityCities }: CountCitiesProps): JSX.Element {
   return (
     <Box>
       <Text
-        textAlign="center"
-        fontSize="5xl"
+        textAlign={['left', 'center']}
+        fontSize={['2xl', '5xl']}
         fontWeight={600}
-        color="yellow.500"
+        color="red.700"
       >
         {quantityCities}
       </Text>
-      <Text fontSize="2xl" fontWeight={600}>
+      <Text fontSize={['xl', '2xl']} fontWeight={[400, 600]}>
         cidades +100
       </Text>
     </Box>

@@ -19,7 +19,7 @@ type SlideProps = {
 
 export function Slide({ continents }: SlideProps): JSX.Element {
   return (
-    <Box w="100%" h="100%" maxWidth={1240} mx="auto" mt="14">
+    <Box w="100%" h="100%" maxWidth={1240} mx="auto" mt={['5', '14']}>
       <Swiper
         style={{ width: '100%', flex: 1 }}
         slidesPerView={1}
@@ -42,17 +42,27 @@ export function Slide({ continents }: SlideProps): JSX.Element {
               backgroundRepeat="no-repeat"
               backgroundSize="cover"
               w="100%"
-              h={450}
+              h={['375px', '450px']}
               align="center"
               justify="center"
               direction="column"
             >
               <Link href={`/continent/${continent.slug}`}>
                 <a>
-                  <Text fontSize="5xl" fontWeight="bold" color="gray.50">
+                  <Text
+                    fontSize={['2xl', '5xl']}
+                    fontWeight="bold"
+                    color="gray.50"
+                  >
                     {continent.titleSlide}
                   </Text>
-                  <Text fontSize="2xl" fontWeight="bold" color="gray.300">
+                  <Text
+                    fontSize={['sm', '2xl']}
+                    fontWeight="bold"
+                    color="gray.300"
+                    // maxWidth={['70%', '90%']}
+                    // textAlign="center"
+                  >
                     {continent.aboutText}
                   </Text>
                 </a>

@@ -5,7 +5,7 @@ import { RichText } from 'prismic-dom';
 
 import { getPrismicClient } from '../../services/prismic';
 import { CityCard } from '../../components/Continents/CityCard';
-import { CityBanner } from '../../components/Continents/ContinentBanner';
+import { ContinentBanner } from '../../components/Continents/ContinentBanner';
 import { Information } from '../../components/Continents/ContinentInformation';
 
 type Card = {
@@ -38,16 +38,26 @@ export default function Continent({ continent }: ContinentProps): JSX.Element {
       </Head>
 
       <Flex direction="column" h="100vh - 24" w="100%">
-        <CityBanner bannerURL={continent.bannerURL} title={continent.title} />
+        <ContinentBanner
+          bannerURL={continent.bannerURL}
+          title={continent.title}
+        />
 
-        <Box mt="20" w="100%" maxWidth={1200} h="100%" mx="auto" px="5">
+        <Box
+          mt={['6', '20']}
+          w="100%"
+          maxWidth={1200}
+          h="100%"
+          mx="auto"
+          px="5"
+        >
           <Information
             quantity={continent.quantities}
             about={continent.about}
           />
 
-          <Box mt="20" mb="20">
-            <Text fontSize="4xl" fontWeight={500}>
+          <Box mt={['8', '20']} mb={['8', '20']}>
+            <Text fontSize={['2xl', '4xl']} fontWeight={500}>
               Cidades +100
             </Text>
 

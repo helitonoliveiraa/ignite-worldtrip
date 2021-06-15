@@ -7,19 +7,8 @@ type NavLinkProps = {
 
 export function NavLink({ children }: NavLinkProps): JSX.Element {
   return (
-    <Link
-      href="teste"
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      padding="5"
-      borderRadius="2.5"
-      _hover={{
-        underline: 'none',
-        bgColor: 'yellow.50',
-      }}
-    >
-      <VStack spacing="4">{children}</VStack>
+    <Link href="teste" lineHeight="1">
+      <VStack spacing={['0', '4']}>{children}</VStack>
     </Link>
   );
 }
