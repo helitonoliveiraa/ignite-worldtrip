@@ -36,13 +36,13 @@ export default function Home({ continents }: HomeProps): JSX.Element {
           w="100%"
           mx="auto"
           px="5"
-          mt="20"
+          mt={['9', '20']}
         >
           <Nav />
 
           <Box
-            mt="20"
-            pt="10"
+            mt={['9', '20']}
+            pt={['6', '10']}
             position="relative"
             scaleX="0.6"
             _before={{
@@ -55,10 +55,12 @@ export default function Home({ continents }: HomeProps): JSX.Element {
               borderColor: 'gray.700',
             }}
           >
-            <Text fontSize="4xl" textAlign="center">
+            <Text fontSize={['xl', '4xl']} fontWeight="500" textAlign="center">
               Vamos nessa?{' '}
             </Text>
-            <Text fontSize="4xl">Então escolha seu continente</Text>
+            <Text fontSize={['xl', '4xl']} fontWeight="500">
+              Então escolha seu continente
+            </Text>
           </Box>
         </Flex>
 

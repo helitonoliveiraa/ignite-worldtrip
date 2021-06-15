@@ -1,4 +1,11 @@
-import { Box, Flex, Image, Text, VStack } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Image,
+  Text,
+  useBreakpointValue,
+  VStack,
+} from '@chakra-ui/react';
 
 type CardProps = {
   imgCountryURL: string;
@@ -13,16 +20,38 @@ export function Card({
   city,
   flagURL,
 }: CardProps): JSX.Element {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   return (
     <Box
-      maxWidth="64"
+      mx={isWideVersion ? '0' : 'auto'}
+      maxWidth={['90%', '64']}
       border="1px solid"
       borderColor="red.700"
       borderRadius="4px"
+      cursor="pointer"
+      boxShadow="lg"
+      rounded="md"
+      bg="white"
+      zIndex="5"
+      transition="all 0.1s"
+      _hover={{
+        boxShadow: '2xl',
+        opacity: '0.9',
+      }}
     >
-      <Image src={imgCountryURL} alt={city} borderTopRadius="4px" />
+      <Image
+        src={imgCountryURL}
+        alt={city}
+        borderTopRadius="4px"
+        objectFit="cover"
+        w="100%"
+      />
 
-      <Flex align="center" justify="space-between" p="6" mt="auto">
+      <Flex align="center" justify="space-between" p="6">
         <Box>
           <VStack spacing="3" align="start">
             <Text fontSize="xl" fontWeight={500} lineHeight="6">

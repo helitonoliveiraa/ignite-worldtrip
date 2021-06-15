@@ -49,7 +49,7 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "yarn eslint --fix",
+      "yarn eslint --max-warnings=0 --fix",
       "yarn prettier --write"
     ]
   },
