@@ -35,3 +35,11 @@
 In this challenge, my main objective was to create an application using Next.js, ChakraUI and consume data from the Prismic API and also make it responsive for practice that I learned during the classes.
 
 So I did a bit more and changed the color pallet and make deploy on Vercel
+
+## :wrench: Technologies
+
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [ChakraUI](https://chakra-ui.com/)
+- [Swiper](https://swiperjs.com/)
+- [Prismic CMS](https://prismic.io/)
